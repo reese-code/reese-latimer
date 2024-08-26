@@ -1,0 +1,66 @@
+.nav {
+    display: flex;
+    width: calc( 100% - 80px);
+    justify-content: space-between;
+    margin-left: 40px;
+}
+@media only screen and (max-width: 1024px) {
+    .nav {
+        width: calc( 100% - 24px );
+        margin-left: 12px;
+    }
+}
+
+.hamburger {
+    margin-top: 8px;
+    display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+    .links {
+        display: none;
+    }
+
+    .logo-home {
+        margin: auto;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* MOBILE NAV */
+
+    .mobile-nav {
+        background-color: rgba(25, 25, 25, 0.5);
+        backdrop-filter:blur(7px);
+        width: 300px;
+        position:absolute;
+        top: 0px;
+        left: -305px;
+        height: 100%;
+        display: block;
+        background-image: url(./assets/grain.png);
+        box-shadow: 3px 5px 5px rgba(25, 25, 25, 0.5);
+        
+    }
+
+    .hamburger-light {
+        margin: 12px;
+        margin-top: 10px;
+    }
+
+    .links-mobile-nav {
+        display: flex;
+        color: var(--white);
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .links-mobile-nav a {
+        color: var(--white);
+        text-transform:capitalize;
+    }
+
+/* MOBILE NAV END */

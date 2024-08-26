@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "neue montreal bold italic";
+    src: url(./assets/neue-montreal-code/neuemontreal-semibolditalic.otf);
+  }
+
+  .bold-italic {
+    font-family: "neue montreal bold italic" ;
+  }
+
+.hero {
+    margin: 20px 40px;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .hero {
+        margin: 20px 12px;
+    }
+}
+
+.logo-main {
+    justify-self: center;
+    width: 100%;
+    height: auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-top: -100px;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .content {
+        margin-top: 0px;
+    }
+}
+
+.p {
+    max-width: 300px;
+}
+

@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  padding: 0px;
+  margin: 0px;
+}
+
+/* TYPEOGRAPHY */
+
+@font-face {
+  font-family: "neue montreal medium";
+  src: url(./assets/neue-montreal-code/neuemontreal-medium.otf);
+}
+@font-face {
+  font-family: "neue montreal bold";
+  src: url(./assets/neue-montreal-code/neuemontreal-bold.otf);
+}
+
+body {
+  font-family: "neue montreal medium", sans-serif;
+}
+
+.section-title {
+  font-family: "neue montreal bold", sans-serif;
+  font-size: 48px;
+}
+
+.name-logo {
+  font-size: 32px;
+}
+
+.h1, h1 {
+  font-size: 128px;
+}
+ @media only screen and (max-width: 1024px) {
+  .h1, h1 {
+    font-size: 48px;
+  }  
+ }
+ 
+ .h2, h2 {
+  font-size: 64px;
+}
+ @media only screen and (max-width: 1024px) {
+  .h2, h2 {
+    font-size: 40px;
+  }  
+ }
+
+ .h3, h3 {
+  font-size: 48px;
+}
+ @media only screen and (max-width: 1024px) {
+  .h3, h3 {
+    font-size: 30px;
+  }  
+ }
+
+ .p, p {
+  font-size: 32px;
+}
+ @media only screen and (max-width: 1024px) {
+  .p, p {
+    font-size: 24px;
+  }  
+ }
+
+ .p-firm {
+  font-size: 32px;
+ }
+
+/* TYPEOGRAPHY END */
+
+/* COLOR */
+
+:root {
+  --white: #f5f4ec;
+  --black: #191919;
+  --blue: #7ba0ff;
+}
+
+/* COLOR END */
+
+/* BACKGROUND TEXTURE */
+
+body {
+  background-color: var(--white);
+  background-image: url(./assets/grain-tv.png);
+  background-size: 700px;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.texture {
+  background-image: url(./assets/tv-50.png);
+  background-size: 700px;
+}
+
+/* BACKGROUND TEXTURE END */
+
+
+/* MARGIN */
+
+.m-norm {
+  margin: 0px 40px;
+}
+@media only screen and (max-width: 1024px) {
+  .m-norm {
+    margin: 0px 12px;
+  }
+}
+
+/* MARGIN END */
+
+
+/* PADDING */
+
+.p-norm {
+  padding: 40px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .p-norm {
+    padding: 20px 12px;
+  }
+}
+
+/* PADDING END */
+
+
+/* BUTTON */
+
+.btn-black {
+  color: var(--black);
+  padding: 12px 40px;
+  border: solid var(--black) 3px;
+  border-radius: 1000px;
+  font-size: 20px;
+  width: fit-content;
+  height: fit-content;
+} 
+.btn-black:hover {
+  background-color: var(--black);
+  color: var(--white);
+  transition-duration: 350ms;
+}
+
+.btn-white {
+  color: var(--white);
+  padding: 12px 40px;
+  border: solid var(--white) 3px;
+  border-radius: 1000px;
+  font-size: 20px;
+  width: fit-content;
+  height: fit-content;
+} 
+.btn-white:hover {
+  background-color: var(--white);
+  color: var(--black);
+  transition-duration: 350ms;
+}
+
+/* BUTTON END */
+
+/* LINKS */
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+/* LINKS END */
+
+/* SHADOW */
+
+.shadow {
+  box-shadow: 0px 2px 4px rgba(25,25,25,0.24);
+}
+
+/* SHADOW END */
