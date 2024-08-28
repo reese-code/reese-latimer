@@ -8,14 +8,6 @@
     gap: 20px;
 }
 
-.lines img {
-    margin: -2px;
-    margin-bottom: -4px;
-    padding: 0px;
-    max-width: 100vw;
-    margin-top: 20px;
-}
-
 @media only screen and (max-width: 1000px) {
     .footer {
         padding: 20px 12px;
@@ -45,3 +37,44 @@
     text-align: center;
     margin: 0px;
 }
+
+/* EXPANDING LINES */
+
+.lines {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.line {
+    width: 100%;
+    background-color: var(--black);
+    height: 10px;
+}
+
+.one {
+    height: 2px;
+}
+
+.two {
+    height: 3px;
+}
+
+.three {
+    height: 5px;
+}
+
+.four {
+    height: 6px;
+}
+
+.five {
+    height: 8px;
+}
+
+.six {
+    height: 10px;
+}
+
+/* EXPANDING LINES END */

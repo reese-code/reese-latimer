@@ -9,7 +9,7 @@ function Experience() {
                     <div className="section-title">what I do</div>
                     <img className='world' src="./assets/wwworld.png" />
                 </div>
-                <div className="content-exp">
+                <div className="content-exp glitch">
                     <h1>e-commerce</h1>
                     <h1>3d design</h1>
                     <h1>web design</h1>
