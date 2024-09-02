@@ -173,9 +173,8 @@ body {
   text-decoration: none;
 }
 
-a {
+.a {
   text-decoration: none;
-  color: var(--black);
 }
 
 /* LINKS END */

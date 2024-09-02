@@ -10,109 +10,115 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Footer() {
 
-    gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
-    gsap.fromTo(
-        ".one",
-        {
-          y: 100, // Initial position
-        },
-        {
-          y: 0, // End position, moving up
-          duration: 1,
-          scrollTrigger: {
-            trigger: ".footer", // Trigger the animation when the footer is in view
-            start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-            end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
-            scrub: true, // Smooth animation linked to scroll
-          },
-        }
-      );
-    
-      gsap.fromTo(
-        ".two",
-        {
-          y: 90, // Initial position
-        },
-        {
-          y: 0, // End position, moving up
-          duration: 1,
-          scrollTrigger: {
-            trigger: ".footer", // Trigger the animation when the footer is in view
-            start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-            end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
-            scrub: true, // Smooth animation linked to scroll
-          },
-        }
-      );
-    
-      gsap.fromTo(
-        ".three",
-        {
-          y: 80, // Initial position
-        },
-        {
-          y: 0, // End position, moving up
-          duration: 1,
-          scrollTrigger: {
-            trigger: ".footer", // Trigger the animation when the footer is in view
-            start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-            end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
-            scrub: true, // Smooth animation linked to scroll
-          },
-        }
-      );
-    
-      gsap.fromTo(
-        ".four",
-        {
-          y: 70, // Initial position
-        },
-        {
-          y: 0, // End position, moving up
-          duration: 1,
-          scrollTrigger: {
-            trigger: ".footer", // Trigger the animation when the footer is in view
-            start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-            end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
-            scrub: true, // Smooth animation linked to scroll
-          },
-        }
-      );
-    
-      gsap.fromTo(
-        ".five",
-        {
-          y: 60, // Initial position
-        },
-        {
-          y: 0, // End position, moving up
-          duration: 1,
-          scrollTrigger: {
-            trigger: ".footer", // Trigger the animation when the footer is in view
-            start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-            end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
-            scrub: true, // Smooth animation linked to scroll
-          },
-        }
-      );
-    
-      gsap.fromTo(
-        ".six",
-        {
-          y: 50, // Initial position
-        },
-        {
-          y: 0, // End position, moving up
-          duration: 1,
-          scrollTrigger: {
-            trigger: ".footer", // Trigger the animation when the footer is in view
-            start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-            end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
-            scrub: true, // Smooth animation linked to scroll
-          },
-        }
-      );
+gsap.fromTo(
+    ".one",
+    {
+      y: 130, // Initial position
+    },
+    {
+      y: 0, // End position, moving up
+      duration: 1,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: ".footer", // Trigger the animation when the footer is in view
+        start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
+        end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
+        scrub: true, // Smooth animation linked to scroll
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".two",
+    {
+      y: 115, // Initial position
+    },
+    {
+      y: 0, // End position, moving up
+      duration: 1,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: ".footer", // Trigger the animation when the footer is in view
+        start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
+        end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
+        scrub: true, // Smooth animation linked to scroll
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".three",
+    {
+      y: 100, // Initial position
+    },
+    {
+      y: 0, // End position, moving up
+      duration: 1,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: ".footer", // Trigger the animation when the footer is in view
+        start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
+        end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
+        scrub: true, // Smooth animation linked to scroll
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".four",
+    {
+      y: 85, // Initial position
+    },
+    {
+      y: 0, // End position, moving up
+      duration: 1,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: ".footer", // Trigger the animation when the footer is in view
+        start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
+        end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
+        scrub: true, // Smooth animation linked to scroll
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".five",
+    {
+      y: 70, // Initial position
+    },
+    {
+      y: 0, // End position, moving up
+      duration: 1,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: ".footer", // Trigger the animation when the footer is in view
+        start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
+        end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
+        scrub: true, // Smooth animation linked to scroll
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".six",
+    {
+      y: 55, // Initial position
+    },
+    {
+      y: 0, // End position, moving up
+      duration: 1,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: ".footer", // Trigger the animation when the footer is in view
+        start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
+        end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
+        scrub: true, // Smooth animation linked to scroll
+      },
+    }
+  );
 
     return (
         <>
