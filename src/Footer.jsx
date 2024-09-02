@@ -24,7 +24,7 @@ gsap.fromTo(
       scrollTrigger: {
         trigger: ".footer", // Trigger the animation when the footer is in view
         start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-        end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
+        end: "top 60%", // End the animation when the top of the footer reaches the middle of the viewport
         scrub: true, // Smooth animation linked to scroll
       },
     }
@@ -42,7 +42,7 @@ gsap.fromTo(
       scrollTrigger: {
         trigger: ".footer", // Trigger the animation when the footer is in view
         start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-        end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
+        end: "top 60%", // End the animation when the top of the footer reaches the middle of the viewport
         scrub: true, // Smooth animation linked to scroll
       },
     }
@@ -60,7 +60,7 @@ gsap.fromTo(
       scrollTrigger: {
         trigger: ".footer", // Trigger the animation when the footer is in view
         start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-        end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
+        end: "top 60%", // End the animation when the top of the footer reaches the middle of the viewport
         scrub: true, // Smooth animation linked to scroll
       },
     }
@@ -78,7 +78,7 @@ gsap.fromTo(
       scrollTrigger: {
         trigger: ".footer", // Trigger the animation when the footer is in view
         start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-        end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
+        end: "top 60%", // End the animation when the top of the footer reaches the middle of the viewport
         scrub: true, // Smooth animation linked to scroll
       },
     }
@@ -96,7 +96,7 @@ gsap.fromTo(
       scrollTrigger: {
         trigger: ".footer", // Trigger the animation when the footer is in view
         start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-        end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
+        end: "top 60%", // End the animation when the top of the footer reaches the middle of the viewport
         scrub: true, // Smooth animation linked to scroll
       },
     }
@@ -114,7 +114,7 @@ gsap.fromTo(
       scrollTrigger: {
         trigger: ".footer", // Trigger the animation when the footer is in view
         start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-        end: "top 70%", // End the animation when the top of the footer reaches the middle of the viewport
+        end: "top 60%", // End the animation when the top of the footer reaches the middle of the viewport
         scrub: true, // Smooth animation linked to scroll
       },
     }

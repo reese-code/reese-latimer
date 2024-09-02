@@ -10,16 +10,17 @@ import Work from './Work';
 function App() {
     return (
         <>
-            <Nav />
-            <Router>
+            
+                <Router>
+                <Nav />
                 <Routes>
-                    <Route index element={<Home />} ><Home /></Route>
-                    <Route path="/Home" element={<Home />} ><Home /></Route>
-                    <Route path="/About" element={<About />} />
-                    <Route path="/Work" element={<Work />} />
-                    <Route path="/Contact" element={<Contact />} />
+                    <Route index element={<Home />} ></Route>
+                    <Route path="/" element={<Home />} ></Route>
+                    <Route path="/hbout" element={<About />} />
+                    <Route path="/hork" element={<Work />} />
+                    <Route path="/hontact" element={<Contact />} />
                 </Routes>
-            </Router>
+                </Router>   
             <Footer />
         </>
     );

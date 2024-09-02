@@ -29,7 +29,7 @@ function Nav() {
                     <img src="./assets/hamburger.png" alt="Open navigation" />
                 </div>
                 <div className="p-firm logo-home">
-                    <Link to="/" className="a">Reese Latimer</Link>
+                    <Link to="/home" className="a">Reese Latimer</Link>
                 </div>
                 <div className="links flex flex-col">
                     <Link to="/about" className="a p">about</Link>
