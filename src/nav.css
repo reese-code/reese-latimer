@@ -43,7 +43,7 @@
         display: block;
         background-image: url(./assets/grain.png);
         box-shadow: 3px 5px 5px rgba(25, 25, 25, 0.5);
-        
+        z-index: 10;
     }
 
     .hamburger-light {

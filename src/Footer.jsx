@@ -12,7 +12,7 @@ function Footer() {
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.fromTo(
+const scroll = gsap.fromTo(
     ".one",
     {
       y: 130, // Initial position

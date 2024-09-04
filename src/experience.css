@@ -21,10 +21,12 @@
 .content-exp h1 {
     border-bottom: solid var(--white) 3px;
     width: 100%;
+    overflow: hidden;
 }
 
 .content-exp {
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 40px;
 }

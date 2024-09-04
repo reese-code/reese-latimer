@@ -33,6 +33,9 @@ body {
 
 .h1, h1 {
   font-size: 128px;
+  font-family: "neue montreal bold";
+  text-transform: uppercase;
+  line-height: 80%;
 }
  @media only screen and (max-width: 1024px) {
   .h1, h1 {
@@ -186,3 +189,31 @@ body {
 }
 
 /* SHADOW END */
+
+/* HIDDEN SCROLL BAR */
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* HIDDEN SCROLL BAR END */
+
+/* LINK UNDERLINE */
+
+.underline {
+  border-bottom: 2px solid var(--black);
+  border-bottom-width: 0px;
+  transition-duration: 0.2s;
+  margin-bottom: 0px;
+}
+
+.underline:hover {
+  transform: scale(1.2)
+}
+
+/* LINK UNDERLINE END */
