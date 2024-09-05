@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import Nav from './Nav';
 import Footer from './Footer';
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
-import Work from './Work';
+import Home from './Home.jsx';
+import About from './About.jsx';
+import Contact from './Contact.jsx';
+import Work from './Work.jsx';
 
 function App() {
     return (
