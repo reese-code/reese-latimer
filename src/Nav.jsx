@@ -31,7 +31,7 @@ function Nav() {
                 <div className="p-firm logo-home">
                     <Link to="/home" className="a">Reese Latimer</Link>
                 </div>
-                <div className="links flex flex-col">
+                <div className="links flex flex-row no-underline">
                     <Link to="/about" className="a p underline">about</Link>
                     <Link to="/work" className="a p underline">work</Link>
                     <Link to="/contact" className="a p underline">contact</Link>
