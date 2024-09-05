@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './experience.css'
 import {motion} from 'framer-motion'
+import world from "../assets/wwworld.png"
 
 function Experience() {
     return(
@@ -8,7 +9,7 @@ function Experience() {
             <div className="container-exp texture p-norm flex flex-col gap-4">
                 <div className="title-bar">
                     <div className="section-title">what I do</div>
-                    <img className='world' src="../assets/wwworld.png" />
+                    <img className='world' src={world} />
                 </div>
                 <div className="content-exp">
                     <Fliptext>e-commerce</Fliptext>

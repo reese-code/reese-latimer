@@ -5,6 +5,8 @@ import './index.css';
 import './nav.css';
 import { gsap } from 'gsap';
 import { useGSAP } from '../@gsap/react';
+import hamburger from "../assets/hamburger.png"
+import close from "../assets/close-nav.png"
 
 gsap.registerPlugin(useGSAP);
 
@@ -26,7 +28,7 @@ function Nav() {
         <div>
             <div className="nav margin-norm justify-between flex flex-row">
                 <div className="hamburger" onClick={navOpen}>
-                    <img src="../assets/hamburger.png" alt="Open navigation" />
+                    <img src={hamburger} alt="Open navigation" />
                 </div>
                 <div className="p-firm logo-home">
                     <Link to="/home" className="a">Reese Latimer</Link>
@@ -39,7 +41,7 @@ function Nav() {
             </div>
             <div className="mobile-nav">
                 <div className="hamburger-light">
-                    <img onClick={navClose} src="../assets/close-nav.png" alt="Close navigation" />
+                    <img onClick={navClose} src={close} alt="Close navigation" />
                 </div>
                 <div className="links-mobile-nav">
                     <Link to="/about" className="a h2 underline no-underline" onClick={navClose}>about</Link>
