@@ -17,6 +17,10 @@ body{
   font-family: "neue montreal bold";
   src: url(../assets/neue-montreal-code/neuemontreal-bold.otf);
 }
+@font-face {
+  font-family: "neue montreal bold italic";
+  src: url(../assets/neue-montreal-code/neuemontreal-semibolditalic.otf);
+}
 
 body {
   font-family: "neue montreal medium", sans-serif;
