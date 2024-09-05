@@ -12,8 +12,8 @@ function Projects() {
                     <div className="btn-black">explore</div>
                 </div>
                 <div className="detail-container">
-                    <img className='img-desktop shadow' src="./assets/edistrict-desktop.png" />
-                    <img className='img-mobile shadow' src="./assets/edistrict-mobile.png" />
+                    <img className='img-desktop shadow' src="../assets/edistrict-desktop.png" />
+                    <img className='img-mobile shadow' src="../assets/edistrict-mobile.png" />
                     <Card />
                 </div>
                 

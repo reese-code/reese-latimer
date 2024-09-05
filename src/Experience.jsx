@@ -8,7 +8,7 @@ function Experience() {
             <div className="container-exp texture p-norm flex flex-col gap-4">
                 <div className="title-bar">
                     <div className="section-title">what I do</div>
-                    <img className='world' src="./assets/wwworld.png" />
+                    <img className='world' src="../assets/wwworld.png" />
                 </div>
                 <div className="content-exp">
                     <Fliptext>e-commerce</Fliptext>

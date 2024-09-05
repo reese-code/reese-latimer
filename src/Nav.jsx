@@ -26,7 +26,7 @@ function Nav() {
         <div>
             <div className="nav margin-norm justify-between flex flex-row">
                 <div className="hamburger" onClick={navOpen}>
-                    <img src="./assets/hamburger.png" alt="Open navigation" />
+                    <img src="../assets/hamburger.png" alt="Open navigation" />
                 </div>
                 <div className="p-firm logo-home">
                     <Link to="/home" className="a">Reese Latimer</Link>
@@ -39,7 +39,7 @@ function Nav() {
             </div>
             <div className="mobile-nav">
                 <div className="hamburger-light">
-                    <img onClick={navClose} src="./assets/close-nav.png" alt="Close navigation" />
+                    <img onClick={navClose} src="../assets/close-nav.png" alt="Close navigation" />
                 </div>
                 <div className="links-mobile-nav">
                     <Link to="/about" className="a h2 underline" onClick={navClose}>about</Link>
