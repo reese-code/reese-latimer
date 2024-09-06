@@ -25,7 +25,7 @@ gsap.registerPlugin(ScrollTrigger);
             <div className="line six texture"></div>
         </section>
         <div className="footer texture">
-            <h2>lets create</h2>
+            <h2 className='h2'>lets create</h2>
             <div className="btn-white">Get in touch</div>
             <div className="links-footer">
                 <a href="" className="p">about</a>

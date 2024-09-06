@@ -9,9 +9,12 @@
     align-items: center;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
     .hero {
         margin: 20px 12px;
+    }
+    .peace {
+        width: 60px;
     }
 }
 
@@ -29,7 +32,7 @@
     align-items: center;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
     .content {
         margin-top: 0px;
     }

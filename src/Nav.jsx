@@ -33,10 +33,10 @@ function Nav() {
                 <div className="p-firm logo-home">
                     <Link to="/home" className="a">Reese Latimer</Link>
                 </div>
-                <div className="links flex flex-row no-underline">
-                    <Link to="/about" className="a p underline no-underline">about</Link>
-                    <Link to="/work" className="a p underline no-underline">work</Link>
-                    <Link to="/contact" className="a p underline no-underline">contact</Link>
+                <div className="disapear links flex flex-row no-underline">
+                    <Link to="/about" className="a p link-hover no-underline">about</Link>
+                    <Link to="/work" className="a p link-hover no-underline">work</Link>
+                    <Link to="/contact" className="a p link-hover no-underline">contact</Link>
                 </div>
             </div>
             <div className="mobile-nav">
@@ -44,9 +44,9 @@ function Nav() {
                     <img onClick={navClose} src={close} alt="Close navigation" />
                 </div>
                 <div className="links-mobile-nav">
-                    <Link to="/about" className="a h2 underline no-underline" onClick={navClose}>about</Link>
-                    <Link to="/work" className="a h2 underline no-underline" onClick={navClose}>work</Link>
-                    <Link to="/contact" className="a h2 underline no-underline" onClick={navClose}>contact</Link>
+                    <Link to="/about" className="a h2 link-hover no-underline" onClick={navClose}>about</Link>
+                    <Link to="/work" className="a h2 link-hover no-underline" onClick={navClose}>work</Link>
+                    <Link to="/contact" className="a h2 link-hover no-underline" onClick={navClose}>contact</Link>
                 </div>
             </div>
         </div>

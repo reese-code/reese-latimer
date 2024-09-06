@@ -209,14 +209,14 @@ body {
 
 /* LINK UNDERLINE */
 
-.underline {
+.link-hover {
   border-bottom: 2px solid var(--black);
   border-bottom-width: 0px;
   transition-duration: 0.2s;
   margin-bottom: 0px;
 }
 
-.underline:hover {
+.link-hover:hover {
   transform: scale(1.2)
 }
 

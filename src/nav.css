@@ -28,6 +28,9 @@
     .hamburger {
         display: block;
     }
+    .disapear {
+        display: none;
+    }
 }
 
 /* MOBILE NAV */

@@ -30,7 +30,7 @@ const Fliptext = ({children}) => {
         <motion.h1
             initial="initial"
             whileHover="hovered"
-            className='relative block overflow-hidden whitespace-nowrap'>
+            className='h1 relative block overflow-hidden whitespace-nowrap'>
             <div className='first-div'>
                 {children.split("").map((l, i) => {
                     return <motion.span
