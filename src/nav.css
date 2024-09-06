@@ -28,9 +28,12 @@
     .hamburger {
         display: block;
     }
+
     .disapear {
-        display: none;
+        position: absolute;
+        left: 100000px;
     }
+    
 }
 
 /* MOBILE NAV */
