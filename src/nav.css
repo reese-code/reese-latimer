@@ -17,9 +17,7 @@
 }
 
 @media only screen and (max-width: 1024px) {
-    .links {
-        display: none;
-    }
+    
 
     .logo-home {
         margin: auto;
@@ -27,11 +25,6 @@
 
     .hamburger {
         display: block;
-    }
-
-    .disapear {
-        position: absolute;
-        left: 100000px;
     }
     
 }

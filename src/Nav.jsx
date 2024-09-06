@@ -33,7 +33,7 @@ function Nav() {
                 <div className="p-firm logo-home">
                     <Link to="/home" className="a">Reese Latimer</Link>
                 </div>
-                <div className="disapear links flex flex-row no-underline">
+                <div className="sm:hidden lg:block links flex flex-row no-underline">
                     <Link to="/about" className="a p link-hover no-underline">about</Link>
                     <Link to="/work" className="a p link-hover no-underline">work</Link>
                     <Link to="/contact" className="a p link-hover no-underline">contact</Link>
