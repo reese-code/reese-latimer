@@ -10,7 +10,7 @@ import Work from './Work.jsx';
 
 function App() {
     return (
-        <>
+        <div className='overflow-x-hidden'>
             <Router>
                 <Nav />
                 <Routes>
@@ -22,7 +22,7 @@ function App() {
                 </Routes>
             </Router>   
             <Footer />
-        </>
+        </div>
     );
 }
 
