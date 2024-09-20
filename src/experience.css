@@ -30,3 +30,33 @@
     width: 100%;
     gap: 40px;
 }
+
+.square-style {
+    width: 8px;
+    height: 8px;
+    background-color: var(--white);
+    position: absolute;
+    transform: rotate(45deg);
+    top: 95%;
+    left: -1px;
+}
+
+.square-style-end {
+    width: 8px;
+    height: 8px;
+    background-color: var(--white);
+    position: absolute;
+    transform: rotate(45deg);
+    top: 95%;
+    right: -1px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .square-style {
+        top: 89%;
+    }
+
+    .square-style-end {
+        top: 89%;
+    }
+}

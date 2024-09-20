@@ -6,7 +6,7 @@
     gap: 20px;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1300px) {
     .projects-home {
         width: calc(100%);
         padding: 20px 12px;
@@ -19,29 +19,67 @@
 
 .detail-container {
     display: flex;
-    gap: 20px;
+    background-color: var(--black);
+    padding: 20px;
+    border-radius: 20px;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1300px) {
     .detail-container {
         flex-direction: column;
+        padding: 10px;
+    }
+
+    .content-detail-card {
+        gap: 40px
     }
 }
 
 .detail-container img {
-    border-radius: 20px;
+    border-radius: 20px 0px 0px 20px;
 }
 
-.img-mobile {
-    display: none;
+/* PROJECT CARD */
+
+.content-detail-card {
+    color: var(--white);
+    border: 3px solid var(--white);
+    border-radius: 0px 20px 20px 0px;
 }
 
-@media only screen and (max-width: 600px) {
-    .img-mobile {
-        display: block;
+.upper-half-card {
+    text-transform: uppercase;
+}
+
+.title-card {
+    font-size: 40px;
+    font-family: "neue montreal bold", sans-serif;
+}
+
+@media only screen and (max-width: 1300px) {
+
+    .title-card {
+        font-size: 32px;
     }
 
-    .img-desktop {
-        display: none;
+    .content-detail-card {
+        border-radius: 0px 0px 20px 20px;
     }
+
+    .detail-container img {
+        border-radius: 20px 20px 0px 0px;
+    }
+
 }
+
+.number-project {
+    font-size: 20px;
+}
+
+.development-info {
+    color: var(--black);
+    background-color: var(--blue);
+    padding: 10px 15px;
+}
+
+/* PROJECT CARD END */

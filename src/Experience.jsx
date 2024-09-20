@@ -12,10 +12,11 @@ function Experience() {
                     <img className='world' src={world} />
                 </div>
                 <div className="content-exp">
-                    <Fliptext>e-commerce</Fliptext>
-                    <Fliptext>3d design</Fliptext>
-                    <Fliptext>web design</Fliptext>
-                    <Fliptext>front end</Fliptext>
+                    
+                <div className='relative'><div className="square-style"></div><Fliptext>e-commerce</Fliptext><div className="square-style-end"></div></div>
+                <div className='relative'><div className="square-style"></div><Fliptext>3d design</Fliptext><div className="square-style-end"></div></div>
+                <div className='relative'><div className="square-style"></div><Fliptext>web design</Fliptext><div className="square-style-end"></div></div>
+                <div className='relative'><div className="square-style"></div><Fliptext>front end</Fliptext><div className="square-style-end"></div></div>
                 </div>
             </div>
         </>

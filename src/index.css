@@ -28,6 +28,7 @@ body {
 
 .section-title {
   font-family: "neue montreal bold", sans-serif;
+  text-transform: uppercase;
   font-size: 48px;
 }
 
@@ -39,11 +40,11 @@ body {
   font-size: 128px;
   font-family: "neue montreal bold";
   text-transform: uppercase;
-  line-height: 80%;
+  line-height: 90%;
 }
  @media only screen and (max-width: 1024px) {
   .h1, h1 {
-    font-size: 48px;
+    font-size: 56px;
   }  
  }
  
