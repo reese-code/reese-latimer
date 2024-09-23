@@ -36,16 +36,15 @@
     height: 8px;
     background-color: var(--white);
     position: absolute;
+}
+
+.square-left-exp {
     transform: rotate(45deg);
     top: 95%;
     left: -1px;
 }
 
-.square-style-end {
-    width: 8px;
-    height: 8px;
-    background-color: var(--white);
-    position: absolute;
+.square-right-exp {
     transform: rotate(45deg);
     top: 95%;
     right: -1px;

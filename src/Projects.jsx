@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './projects.css'
-
+import edistrict from "../assets/edistrict-desktop.png"
 function Projects() {
 
     return(
@@ -10,9 +10,9 @@ function Projects() {
                     <div className="section-title">projects</div>
                     <div className="btn-black">explore</div>
                 </div>
-                <div className="detail-container">
-                    <img className='img-desktop' src="../assets/edistrict-desktop.png" />
-                    <div className="content-detail-card flex flex-col w-full p-5 justify-between">
+                <div className="detail-container shadow">
+                    <img className='img-desktop' src={edistrict} />
+                    <div className="content-detail-card flex flex-col w-full p-5 justify-between relative">
                         <div className="upper-half-card flex flex-col">
                             <div className="title-card-container flex justify-between">
                                 <div className="title-card">edistrict</div>
