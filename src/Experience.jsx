@@ -13,10 +13,10 @@ function Experience() {
                 </div>
                 <div className="content-exp">
                     
-                <div className='relative'><div className="square-style square-left-exp"></div><Fliptext>e-commerce</Fliptext><div className="square-style square-right-exp"></div></div>
-                <div className='relative'><div className="square-style square-left-exp"></div><Fliptext>3d design</Fliptext><div className="square-style square-right-exp"></div></div>
-                <div className='relative'><div className="square-style square-left-exp"></div><Fliptext>web design</Fliptext><div className="square-style square-right-exp"></div></div>
-                <div className='relative'><div className="square-style square-left-exp"></div><Fliptext>front end</Fliptext><div className="square-style square-right-exp"></div></div>
+                <div className='relative'><Fliptext>e-commerce</Fliptext></div>
+                <div className='relative'><Fliptext>3d design</Fliptext></div>
+                <div className='relative'><Fliptext>web design</Fliptext></div>
+                <div className='relative'><Fliptext>front end</Fliptext></div>
                 </div>
             </div>
         </>

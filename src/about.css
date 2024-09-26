@@ -1,0 +1,136 @@
+/* HEADING */
+
+.about-page {
+    margin: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.about-title {
+    background-color: var(--black);
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 300px; 
+    font-family: "neue montreal bold";
+    padding: 10px 20px;
+    line-height: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .about-title {
+        font-size: 200px;
+    }
+
+    .about-page {
+        margin: 0px 12px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .about-title {
+        font-size: 96px;
+    }
+}
+
+/* HEADING END */
+
+/* DESCRIPTION */
+
+.description {
+    color: var(--blue);
+}
+
+.color-black {
+    color: var(--black);
+}
+
+/* DESCRIPTION END */
+
+/* EXPERIENCE */
+
+.experience-about {
+    gap: 20px;
+}
+
+.experience-content-about {
+    border-left: 3px solid var(--black);
+    justify-content: space-between;
+    width: 100%;
+}
+
+.border-padding {
+    border-bottom: 3px solid var(--black);
+    padding: 20px;
+}
+
+.h1 {
+    font-size: 100px;
+    line-height: 77%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .h1 {
+        font-size: 40px;
+    }
+
+    .border-padding {
+        padding: 10px;
+    }
+    .face-pixel {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .face-pixel {
+        width: 100%
+    }
+    .experience-about {
+        flex-direction: column;
+    }
+}
+
+/* EXPERIENCE END */
+
+/* EMAIL SCROLL BAR */
+
+.email-scroll-bar {
+    border-top: 3px solid var(--black);
+    border-bottom: 3px solid var(--black);
+    overflow-x: hidden;
+}
+
+.overflow-text {
+    width: fit-content;
+    line-height: 120%;
+    white-space: nowrap;
+    position:static;
+    padding-right: 10px;
+}
+
+.scroller {
+    animation: sideMove 10s linear infinite;
+}
+
+.scroller:hover {
+    -webkit-animation-play-state: paused;
+}
+
+.blackout {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0px 10px;
+}
+
+@keyframes sideMove {
+    from {
+        transfrom: translate(0%);
+    }
+    to {
+        transform: translate(-33.333%);
+    }
+}
+
+/* EMAIL SCROLL BAR END */
