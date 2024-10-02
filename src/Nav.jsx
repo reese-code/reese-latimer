@@ -6,9 +6,22 @@ import './nav.css';
 import { gsap } from 'gsap';
 import { useGSAP } from '../@gsap/react';
 import hamburger from "../assets/hamburger.png"
-import close from "../assets/close-nav.png"
+import './closeX.css'
+import {motion} from 'framer-motion';
+
+const DURATION = 0.1;
 
 gsap.registerPlugin(useGSAP);
+
+const barLeft = {
+    initial: { rotate: -45 },
+    animate: { rotate: 45 },
+}
+
+const barRight = {
+    initial: { rotate: 45 },
+    animate: { rotate: -45 },
+}
 
 function navOpen() {
     gsap.to('.mobile-nav', {
@@ -34,15 +47,36 @@ function Nav() {
                     <Link to="/home" className="a">Reese Latimer</Link>
                 </div>
                 <div className="links flex flex-row no-underline" >
-                    <Link to="/about" className="a p link-hover no-underline">about</Link>
+                    <Link to="/about" className="a p link-hover no-underline relative">about</Link>
                     <Link to="/work" className="a p link-hover no-underline">work</Link>
                     <Link to="/contact" className="a p link-hover no-underline">contact</Link>
                 </div>
             </div>
             <div className="mobile-nav">
-                <div className="hamburger-light">
-                    <img onClick={navClose} src={close} alt="Close navigation" />
-                </div>
+                <motion.div
+                initial="initial"
+                animate="initial"
+                whileHover="animate"
+                className="x-container"
+                onClick={navClose}
+                >
+                <motion.div 
+                    variants={barLeft}
+                    transition={{
+                        duration: DURATION,
+                        ease: "easeInOut",
+                    }}
+                    className="bar-x left-bar"
+                />
+                <motion.div 
+                    variants={barRight}
+                    transition={{
+                        duration: DURATION,
+                        ease: "easeInOut",
+                    }}
+                    className="bar-x right-bar"
+                />
+                </motion.div>
                 <div className="links-mobile-nav">
                     <Link to="/about" className="a h2 link-hover no-underline" onClick={navClose}>about</Link>
                     <Link to="/work" className="a h2 link-hover no-underline" onClick={navClose}>work</Link>

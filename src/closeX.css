@@ -1,0 +1,25 @@
+.bar-x {
+    width: 35px;
+    height: 3px;
+    background-color: var(--white);
+    transition-duration: 0.3s;
+    top: 50%;
+    left: 50%;
+}
+
+.x-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    gap: 0px
+}
+
+.left-bar {
+    transform: rotate(45deg);
+    margin-top: px;
+}
+
+.right-bar {
+    transform: rotate(-45deg);
+}
