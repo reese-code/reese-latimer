@@ -7,36 +7,63 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 function scrollFold() {
-    const items = gsap.utils.toArray(".item");
+  const items = gsap.utils.toArray(".item");
+  const containerExp = document.querySelector('.container-exp');
+  const containerHeight = containerExp.offsetHeight;
+  const lastItem = items[items.length - 1];
+  const lastH1 = lastItem.querySelector('.h1');
   
-    items.forEach((item, i) => {
-      const header = item.querySelector(".h1");
-      const sectionWhole = item.querySelector(".content-exp");
-      gsap.to(item, {
-        scrollTrigger: {
-          trigger: item,
-          start: "top top",  // Pin when the top of the card hits the top of the viewport
-          end: "bottom",  // Pin until the card's height has been scrolled past
-          pin: true,  // Pin the card
-          pinSpacing: false,  // Prevent extra space during pinning
-          scrub: 1,  // Smooth scrubbing
-          markers: true,  // Show markers for debugging
-          onEnter: () => {
-            gsap.to(item, { zIndex: items.length - i });  // Bring the current card in front
-          },
-          onLeaveBack: () => {
-            gsap.to(item, { zIndex: 1 });  // Reset z-index when scrolling back
-          }
+  items.forEach((item, i) => {
+    gsap.to(item, {
+      scrollTrigger: {
+        trigger: item,
+        start: "top top",
+        endTrigger: ".final",
+        end: i === items.length - 1 
+          ? `+=${lastH1.offsetHeight}`
+          : `+=${containerHeight - item.offsetTop}`,  // Restrict scroll to container height
+        pin: true,
+        pinSpacing: false,
+        scrub: 1,
+        markers: true,
+        onEnter: () => {
+          gsap.to(item, { 
+            zIndex: items.length - i,
+            immediate: true
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(item, { 
+            zIndex: 1,
+            immediate: true
+          });
         }
-      });
+      }
     });
-  }
+  });
+}
+
+function Card({ title, description, number }) {
+  return (
+    <div className="item">
+      <div className="card">
+        <div className="h1">{title}</div>
+        <div className="p">{description}</div>
+        <div className="bottom-number">{number}</div>
+      </div>
+    </div>
+  );
+}
 
 function Experience() {
   useEffect(() => {
     scrollFold();
+    
+    // Clean up function
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
   return (
@@ -47,36 +74,29 @@ function Experience() {
           <img className="world" src={world} alt="world" />
         </div>
         <div className="content-exp">
-          <div className="item">
-            <div className="card-1 card">
-              <div className="h1">creative direction</div>
-              <div className="p">Lorem ipsum dolor sit amet consectetur. Sed elementum dictum aliquet eget suscipit. Arcu fermentum at amet augue magna non faucibus.</div>
-              <div className="bottom-number">001</div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="card-2 card">
-              <div className="h1">web design</div>
-              <div className="p">Lorem ipsum dolor sit amet consectetur. Sed elementum dictum aliquet eget suscipit. Arcu fermentum at amet augue magna non faucibus.</div>
-              <div className="bottom-number">002</div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="card-3 card">
-              <div className="h1">front end</div>
-              <div className="p">Lorem ipsum dolor sit amet consectetur. Sed elementum dictum aliquet eget suscipit. Arcu fermentum at amet augue magna non faucibus.</div>
-              <div className="bottom-number">003</div>
-            </div>
-          </div>
-          <div className="item">
-            <div className="card-4 card">
-              <div className="h1">3d design</div>
-              <div className="p">Lorem ipsum dolor sit amet consectetur. Sed elementum dictum aliquet eget suscipit. Arcu fermentum at amet augue magna non faucibus.</div>
-              <div className="bottom-number">004</div>
-            </div>
-          </div>
+          <Card 
+            title="Creative Direction" 
+            description="Lorem ipsum dolor sit amet consectetur. Sed elementum dictum aliquet eget suscipit. Arcu fermentum at amet augue magna non faucibus." 
+            number="001" 
+          />
+          <Card 
+            title="Web Design" 
+            description="Lorem ipsum dolor sit amet consectetur. Sed elementum dictum aliquet eget suscipit. Arcu fermentum at amet augue magna non faucibus." 
+            number="002" 
+          />
+          <Card 
+            title="Front End" 
+            description="Lorem ipsum dolor sit amet consectetur. Sed elementum dictum aliquet eget suscipit. Arcu fermentum at amet augue magna non faucibus." 
+            number="003" 
+          />
+          <Card 
+            title="3D Design" 
+            description="Lorem ipsum dolor sit amet consectetur. Sed elementum dictum aliquet eget suscipit. Arcu fermentum at amet augue magna non faucibus." 
+            number="004" 
+          />
         </div>
       </div>
+      <div className="final"></div>
     </>
   );
 }

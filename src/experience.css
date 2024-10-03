@@ -64,3 +64,39 @@
 .item {
     background-color: var(--black);
 }
+
+.container-exp {
+  background-color: var(--black);
+  color: var(--white);
+  width: 100%;
+  height: fit-content;
+  overflow-y: hidden;
+}
+
+.content-exp {
+  position: relative;
+  width: 100%;
+  gap: 0px;
+}
+
+.item {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.card {
+  border-top: 3px solid var(--white);
+  padding: 40px 0px;
+  background-color: var(--black);
+  width: 100%;
+}
+
+.h1 {
+  position: relative;
+  z-index: 2;
+}
+
+.projects-home {
+    
+}

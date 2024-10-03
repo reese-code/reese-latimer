@@ -5,7 +5,7 @@ function Projects() {
 
     return(
         <>
-            <div className="projects-home ">
+            <div className="projects-home">
                 <div className="title-bar">
                     <div className="section-title">projects</div>
                     <div className="btn-black">explore</div>

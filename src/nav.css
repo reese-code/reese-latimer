@@ -38,10 +38,10 @@
     .mobile-nav {
         background-color: rgba(25, 25, 25, 0.5);
         backdrop-filter:blur(7px);
-        width: 300px;
+        width: 100vw;
         position:fixed;
         top: 0px;
-        left: -305px;
+        left: -100vw;
         height: 100%;
         display: block;
         background-image: url(../assets/grain.png);

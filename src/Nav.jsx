@@ -11,6 +11,7 @@ import {motion} from 'framer-motion';
 
 const DURATION = 0.1;
 
+
 gsap.registerPlugin(useGSAP);
 
 const barLeft = {
@@ -25,13 +26,13 @@ const barRight = {
 
 function navOpen() {
     gsap.to('.mobile-nav', {
-        x: 305,
+        x: to.right,
     });
 }
 
 function navClose() {
     gsap.to('.mobile-nav', {
-        x: -305,
+        x: 100,
         timeScale: 1,
     });
 }

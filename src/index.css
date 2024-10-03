@@ -87,6 +87,8 @@ body {
 
 /* TYPEOGRAPHY END */
 
+/* 19ff3c color green */
+
 /* COLOR */
 
 :root {
@@ -244,3 +246,17 @@ body {
 }
 
 /* LINK-HOVER END */
+
+/* HIGHLIGHT COLOR */
+
+::-moz-selection { /* Code for Firefox */
+  color: var(--black);
+  background: var(--blue);
+}
+
+::selection {
+  color: var(--black);
+  background: var(--blue);
+}
+
+/* HIGHLIGHT COLOR END */
