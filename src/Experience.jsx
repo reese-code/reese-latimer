@@ -11,18 +11,20 @@ function scrollFold() {
   const items = gsap.utils.toArray(".item");
   const containerExp = document.querySelector('.container-exp');
   const containerHeight = containerExp.offsetHeight;
+  const final = document.querySelector('.final'); 
   const lastItem = items[items.length - 1];
-  const lastH1 = lastItem.querySelector('.h1');
   
   items.forEach((item, i) => {
+    const nextItem = items[i + 1]; // Reference to the next card
+
     gsap.to(item, {
       scrollTrigger: {
         trigger: item,
         start: "top top",
-        endTrigger: ".final",
-        end: i === items.length - 1 
-          ? `+=${lastH1.offsetHeight}`
-          : `+=${containerHeight - item.offsetTop}`,  // Restrict scroll to container height
+        endTrigger: nextItem || lastItem.offsetHeight,  // If nextItem exists, use its position. If it's the last card, use the final marker.
+        end: nextItem 
+          ? `top top`  // End when the next card reaches the top of the viewport
+          : `+=${lastItem.offsetHeight}`, // For the last item, end at the top of the last card.
         pin: true,
         pinSpacing: false,
         scrub: 1,
@@ -44,9 +46,9 @@ function scrollFold() {
   });
 }
 
-function Card({ title, description, number }) {
+function Card({ title, description, number, item }) {
   return (
-    <div className="item">
+    <div className={item}>
       <div className="card">
         <div className="h1">{title}</div>
         <div className="p">{description}</div>
@@ -75,21 +77,25 @@ function Experience() {
         </div>
         <div className="content-exp">
           <Card 
+            item="item"
             title="Creative Direction" 
             description="Lorem ipsum dolor sit amet consectetur. Sed elementum dictum aliquet eget suscipit. Arcu fermentum at amet augue magna non faucibus." 
             number="001" 
           />
           <Card 
+            item="item"
             title="Web Design" 
             description="Lorem ipsum dolor sit amet consectetur. Sed elementum dictum aliquet eget suscipit. Arcu fermentum at amet augue magna non faucibus." 
             number="002" 
           />
           <Card 
+            item="item"
             title="Front End" 
             description="Lorem ipsum dolor sit amet consectetur. Sed elementum dictum aliquet eget suscipit. Arcu fermentum at amet augue magna non faucibus." 
             number="003" 
           />
           <Card 
+            item="last-card"
             title="3D Design" 
             description="Lorem ipsum dolor sit amet consectetur. Sed elementum dictum aliquet eget suscipit. Arcu fermentum at amet augue magna non faucibus." 
             number="004" 
