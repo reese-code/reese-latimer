@@ -95,8 +95,8 @@ function Experience() {
             number="004" 
           />
         </div>
+        <div className="final"></div>
       </div>
-      <div className="final"></div>
     </>
   );
 }

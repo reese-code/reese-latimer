@@ -36,8 +36,8 @@
 /* MOBILE NAV */
 
     .mobile-nav {
-        background-color: rgba(25, 25, 25, 0.5);
-        backdrop-filter:blur(7px);
+        background-color: rgba(25, 25, 25, 0.75);
+        backdrop-filter:blur(20px);
         width: 100vw;
         position:fixed;
         top: 0px;
@@ -45,9 +45,8 @@
         height: 100%;
         display: block;
         background-image: url(../assets/grain.png);
-        box-shadow: 3px 5px 5px rgba(25, 25, 25, 0.5);
         z-index: 10;
-        padding-top: 20px;
+        padding-top: 20px 0px;
     }
 
     .hamburger-light {

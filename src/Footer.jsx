@@ -1,172 +1,78 @@
-import { StrictMode } from 'react'
-import { Link } from 'react-router-dom';
-import "./Footer.css"
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom'; // Import useLocation from react-router-dom
+import './Footer.css';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-
-// Register the ScrollTrigger plugin
-
-
-
-
-// Footer Lines
-
-function footerBars() {
-
-const endFooter = "top 70%"
-
-  const scroll = gsap.fromTo(
-    ".one",
-    {
-      y: 130, // Initial position
-    },
-    {
-      y: 0, // End position, moving up
-      duration: 1,
-      delay: 0.5,
-      scrollTrigger: {
-        trigger: ".footer", // Trigger the animation when the footer is in view
-        start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-        end: endFooter, // End the animation when the top of the footer reaches the middle of the viewport
-        scrub: true, // Smooth animation linked to scroll
-      },
-    }
-  );
-  
-  gsap.fromTo(
-    ".two",
-    {
-      y: 115, // Initial position
-    },
-    {
-      y: 0, // End position, moving up
-      duration: 1,
-      delay: 0.5,
-      scrollTrigger: {
-        trigger: ".footer", // Trigger the animation when the footer is in view
-        start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-        end: endFooter, // End the animation when the top of the footer reaches the middle of the viewport
-        scrub: true, // Smooth animation linked to scroll
-      },
-    }
-  );
-  
-  gsap.fromTo(
-    ".three",
-    {
-      y: 100, // Initial position
-    },
-    {
-      y: 0, // End position, moving up
-      duration: 1,
-      delay: 0.5,
-      scrollTrigger: {
-        trigger: ".footer", // Trigger the animation when the footer is in view
-        start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-        end: endFooter, // End the animation when the top of the footer reaches the middle of the viewport
-        scrub: true, // Smooth animation linked to scroll
-      },
-    }
-  );
-  
-  gsap.fromTo(
-    ".four",
-    {
-      y: 85, // Initial position
-    },
-    {
-      y: 0, // End position, moving up
-      duration: 1,
-      delay: 0.5,
-      scrollTrigger: {
-        trigger: ".footer", // Trigger the animation when the footer is in view
-        start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-        end: endFooter, // End the animation when the top of the footer reaches the middle of the viewport
-        scrub: true, // Smooth animation linked to scroll
-      },
-    }
-  );
-  
-  gsap.fromTo(
-    ".five",
-    {
-      y: 70, // Initial position
-    },
-    {
-      y: 0, // End position, moving up
-      duration: 1,
-      delay: 0.5,
-      scrollTrigger: {
-        trigger: ".footer", // Trigger the animation when the footer is in view
-        start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-        end: endFooter, // End the animation when the top of the footer reaches the middle of the viewport
-        scrub: true, // Smooth animation linked to scroll
-      },
-    }
-  );
-  
-  gsap.fromTo(
-    ".six",
-    {
-      y: 55, // Initial position
-    },
-    {
-      y: 0, // End position, moving up
-      duration: 1,
-      delay: 0.5,
-      scrollTrigger: {
-        trigger: ".footer", // Trigger the animation when the footer is in view
-        start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-        end: endFooter, // End the animation when the top of the footer reaches the middle of the viewport
-        scrub: true, // Smooth animation linked to scroll
-      },
-    }
-  );
-  }
-
-// Footer Liness End
+gsap.registerPlugin(ScrollTrigger);
 
 function Footer() {
+  const location = useLocation(); // Hook to detect the current route
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
-footerBars();
-ScrollTrigger.refresh();
+  useEffect(() => {
+    // Adding a small delay to ensure that the DOM elements are ready
+    setTimeout(() => {
+      const endFooter = "top 70%";
+      const lines = document.querySelectorAll('.line');
 
-    return (
-        <>
-        <section className='lines'>
-            <div className="line one texture"></div>
-            <div className="line two texture"></div>
-            <div className="line three texture"></div>
-            <div className="line four texture"></div>
-            <div className="line five texture"></div>
-            <div className="line six texture"></div>
-        </section>
-        <div className="footer texture">
-            <h2 className='h2'>lets create</h2>
-            <div className="btn-white">Get in touch</div>
-            <div className="links-footer">
-            <Link to="/about" className="a p link-hover">about</Link>
-                <Link to="/work" className="a p link-hover">work</Link>
-                <Link to="/contact" className="a p link-hover">contant</Link>
-            </div>
-            <div className="copy-right">
-                <div className="p-firm">Reese Latimer</div>
-                <div className="p-firm">2024©</div>
-            </div>
+      // Check if lines exist before animating
+      if (lines.length > 0) {
+        lines.forEach((line, index) => {
+          const initialY = 130 - index * 15; // Adjust initial y position for each line
+
+          gsap.fromTo(
+            line,
+            {
+              y: initialY, // Set initial position based on the index
+            },
+            {
+              y: 0, // End position, all lines move to y=0
+              duration: 1,
+              delay: 0.5,
+              scrollTrigger: {
+                trigger: ".footer", // Trigger the animation when the footer is in view
+                start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
+                end: endFooter, // End the animation when the top of the footer reaches 70% of the viewport
+                scrub: true, // Smooth animation linked to scroll
+              },
+            }
+          );
+        });
+      }
+    }, 100); // Failsafe delay of 100ms
+
+    // Clean up GSAP triggers on component unmount or route change
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, [location.pathname]); // Re-run effect whenever the route changes
+
+  return (
+    <>
+      <section className='lines'>
+        <div className="line one texture"></div>
+        <div className="line two texture"></div>
+        <div className="line three texture"></div>
+        <div className="line four texture"></div>
+        <div className="line five texture"></div>
+        <div className="line six texture"></div>
+      </section>
+
+      <div className="footer texture">
+        <h2 className='h2'>lets create</h2>
+        <div className="btn-white">Get in touch</div>
+        <div className="links-footer">
+          <Link to="/about" className="a p link-hover">about</Link>
+          <Link to="/work" className="a p link-hover">work</Link>
+          <Link to="/contact" className="a p link-hover">contact</Link>
         </div>
-        </>
-    )
-    
+        <div className="copy-right">
+          <div className="p-firm">Reese Latimer</div>
+          <div className="p-firm">2024©</div>
+        </div>
+      </div>
+    </>
+  );
 }
 
-
-
-
-
-
-
-export default Footer
+export default Footer;
