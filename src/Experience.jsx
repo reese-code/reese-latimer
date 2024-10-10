@@ -9,8 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function scrollFold() {
   const items = gsap.utils.toArray(".item");
-  const containerExp = document.querySelector('.container-exp');
-  const containerHeight = containerExp.offsetHeight;
+  const headerHeight = document.querySelector;
   const final = document.querySelector('.final'); 
   const lastItem = items[items.length - 1];
   
@@ -22,8 +21,8 @@ function scrollFold() {
         trigger: item,
         start: "top top",
         endTrigger: nextItem || lastItem.offsetHeight,  // If nextItem exists, use its position. If it's the last card, use the final marker.
-        end: nextItem 
-          ? `top top`  // End when the next card reaches the top of the viewport
+        end: nextItem
+          ? `top top`   // End when the next card reaches the top of the viewport
           : `+=${lastItem.offsetHeight}`, // For the last item, end at the top of the last card.
         pin: true,
         pinSpacing: false,

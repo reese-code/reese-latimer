@@ -52,7 +52,7 @@
 .bottom-number {
     font-size: 64px;
     letter-spacing: -6px;
-    margin-left: auto;
+    margin-right: auto;
 }
 
 @media only screen and (max-width: 1024px) {

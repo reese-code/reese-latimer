@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'; // Import useLocation from
 import './Footer.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Btn from "./button.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,7 +61,11 @@ function Footer() {
 
       <div className="footer texture">
         <h2 className='h2'>lets create</h2>
-        <div className="btn-white">Get in touch</div>
+        <Btn
+          color="btn-white"
+          text="Get in touch"
+          direction="/contact"
+        />
         <div className="links-footer">
           <Link to="/about" className="a p link-hover">about</Link>
           <Link to="/work" className="a p link-hover">work</Link>

@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './projects.css'
 import edistrict from "../assets/edistrict-desktop.png"
+import Btn from "./button.jsx"
+
 function Projects() {
 
     return(
@@ -8,7 +10,11 @@ function Projects() {
             <div className="projects-home">
                 <div className="title-bar">
                     <div className="section-title">projects</div>
-                    <div className="btn-black">explore</div>
+                    <Btn
+                    color="btn-black"
+                    text="explore"
+                    direction="/work"
+                    />
                 </div>
                 <div className="detail-container shadow">
                     <img className='img-desktop' src={edistrict} />

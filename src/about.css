@@ -92,6 +92,10 @@
     }
 }
 
+.bold {
+    font-family: "neue montreal bold";
+}
+
 /* EXPERIENCE END */
 
 /* EMAIL SCROLL BAR */
@@ -111,7 +115,7 @@
 }
 
 .scroller {
-    animation: sideMove 10s linear infinite;
+    animation: sideMove 20s linear infinite;
 }
 
 .scroller:hover {

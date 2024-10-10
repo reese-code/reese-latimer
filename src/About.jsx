@@ -27,6 +27,9 @@ function About() {
                         <div to="/contact" className="h2 overflow-text">Let's create something together <Link to="/contact" className='blackout'>email me</Link></div>
                         <div to="/contact" className="h2 overflow-text">Let's create something together <Link to="/contact" className='blackout'>email me</Link></div>
                         <div to="/contact" className="h2 overflow-text">Let's create something together <Link to="/contact" className='blackout'>email me</Link></div>
+                        <div to="/contact" className="h2 overflow-text">Let's create something together <Link to="/contact" className='blackout'>email me</Link></div>
+                        <div to="/contact" className="h2 overflow-text">Let's create something together <Link to="/contact" className='blackout'>email me</Link></div>
+                        <div to="/contact" className="h2 overflow-text">Let's create something together <Link to="/contact" className='blackout'>email me</Link></div>
                     </div>
                 </div>
             </div>
@@ -42,7 +45,7 @@ const Fliptext = ({children}) => {
         <motion.h1
             initial="initial"
             whileHover="hovered"
-            className='h1 relative block overflow-hidden whitespace-nowrap'>
+            className='h1 relative block overflow-hidden whitespace-nowrap bold'>
             <div className='first-div'>
                 {children.split("").map((l, i) => {
                     return <motion.span
