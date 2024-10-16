@@ -134,7 +134,7 @@ body {
 /* PADDING */
 
 .p-norm {
-  padding: 40px;
+  padding: 0px 40px;
 }
 
 @media only screen and (max-width: 1024px) {

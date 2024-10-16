@@ -1,0 +1,13 @@
+
+.img-container-pro1 {
+    background-color: var(--black);
+    padding: 40px;
+}
+
+.badge {
+    text-transform: uppercase;
+    padding: 10px;
+    background-color: var(--blue);
+    align-items: center;
+    height: fit-content;
+}

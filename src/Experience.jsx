@@ -27,7 +27,7 @@ function scrollFold() {
         pin: true,
         pinSpacing: false,
         scrub: 1,
-        markers: true,
+        markers: false,
         onEnter: () => {
           gsap.to(item, { 
             zIndex: items.length - i,
