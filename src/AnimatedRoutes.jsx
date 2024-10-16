@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Home from './Home.jsx';
 import About from './About.jsx';
 import Contact from './Contact.jsx';
@@ -8,35 +8,35 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const PageTransition = ({ children }) => {
   const location = useLocation();
-  const [hasNavigated, setHasNavigated] = useState(false);
-  const [showLines, setShowLines] = useState(false);
+  const navigate = useNavigate();
+  const [displayLocation, setDisplayLocation] = useState(location);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    if (location.pathname !== '/') {
-      setHasNavigated(true);
-      setShowLines(true);
-      const timer = setTimeout(() => {
-        setShowLines(false);
-      }, 1000); // 1 second delay
-      return () => clearTimeout(timer);
+    if (location !== displayLocation) {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setDisplayLocation(location);
+        setIsAnimating(false);
+      }, 700); // Adjust this timing to match your animation duration
     }
-  }, [location]);
+  }, [location, displayLocation]);
 
   const blockVariants = {
     initial: { y: '-100%' },
     animate: { y: 0 },
-    exit: { y: '-100%' },
+    exit: { y: '100%' },
   };
 
   return (
     <>
       <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
+        <Routes location={displayLocation} key={displayLocation.pathname}>
           {children}
         </Routes>
       </AnimatePresence>
       <AnimatePresence>
-        {hasNavigated && showLines && [...Array(6)].map((_, i) => (
+        {isAnimating && [...Array(6)].map((_, i) => (
           <motion.div
             key={i}
             variants={blockVariants}
@@ -44,8 +44,8 @@ const PageTransition = ({ children }) => {
             animate="animate"
             exit="exit"
             transition={{ 
-              duration: 0.5, 
-              delay: i * 0.1,
+              duration: 0.3,
+              delay: i * 0.05,
               ease: "easeInOut",
             }}
             style={{
@@ -53,9 +53,10 @@ const PageTransition = ({ children }) => {
               top: 0,
               left: `${i * (100 / 6)}%`,
               width: `${100 / 6}%`,
-              height: '100%',
-              backgroundColor: '#000',
+              height: '110%',
+              backgroundColor: '#111',
               zIndex: 50,
+              borderLeft: "0.1px solid #333"
             }}
           />
         ))}
