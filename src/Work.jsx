@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './work.css';
-import ProjectCard from './Project-Card.jsx';
+import ProjectCard from './Project-card.jsx';
 import ProjectView from './Edistrict.jsx'; // Import ProjectView
 
 function Work() {
