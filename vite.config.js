@@ -5,7 +5,8 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['@gsap/react'], // Ensure this matches if you added it for Netlify
+      external: ['@gsap/react'],
+      external: ['three'],
     },
   },
 });
