@@ -5,7 +5,12 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['three', 'three/examples/jsm/controls/OrbitControls', '@gsap/react'],
+      external: [
+        'three',
+        'three/examples/jsm/controls/OrbitControls',
+        'three/examples/jsm/libs/tween.module',
+        '@gsap/react'
+      ],
     },
   },
 });
