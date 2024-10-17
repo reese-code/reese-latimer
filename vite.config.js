@@ -9,6 +9,7 @@ export default defineConfig({
         'three',
         'three/examples/jsm/controls/OrbitControls',
         'three/examples/jsm/libs/tween.module',
+        'three/examples/jsm/math/SimplexNoise',
         '@gsap/react'
       ],
     },
