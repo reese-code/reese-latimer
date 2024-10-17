@@ -4,6 +4,7 @@ import Home from './Home.jsx';
 import About from './About.jsx';
 import Contact from './Contact.jsx';
 import Work from './Work.jsx';
+import NotFound from './NotFound.jsx';
 import { motion, AnimatePresence } from "framer-motion"
 
 const PageTransition = ({ children }) => {
@@ -73,6 +74,7 @@ function AnimatedRoutes() {
       <Route path="/about" element={<About />} />
       <Route path="/work" element={<Work />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="*" element={<NotFound />} />
     </PageTransition>
   )
 }

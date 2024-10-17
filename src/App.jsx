@@ -6,18 +6,17 @@ import "./index.css"
 import AnimatedRoutes from './AnimatedRoutes.jsx';
 
 function App() {
-
     return (
         <div className='overflow-x-hidden'>
             <Router>
                 <Nav />
-                <AnimatedRoutes />
+                <div className="content-wrapper">
+                    <AnimatedRoutes />
+                </div>
                 <Footer />
             </Router>   
-            
         </div>
     );
 }
-
 
 export default App;
