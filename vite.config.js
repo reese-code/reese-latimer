@@ -12,12 +12,21 @@ export default defineConfig({
         'three/examples/jsm/math/SimplexNoise',
         '@gsap/react'
       ],
+      output: {
+        globals: {
+          three: 'THREE',
+          '@gsap/react': 'gsap'
+        }
+      }
     },
+  },
+  optimizeDeps: {
+    include: ['three']
   },
   resolve: {
     alias: {
-      'three': 'https://unpkg.com/three@0.163.0/build/three.module.js',
-      'three/addons/': 'https://unpkg.com/three@0.163.0/examples/jsm/'
+      'three': 'three',
+      'three/addons/': 'three/examples/jsm/'
     }
   }
 });
