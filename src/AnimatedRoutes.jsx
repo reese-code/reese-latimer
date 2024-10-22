@@ -76,7 +76,7 @@ function AnimatedRoutes() {
       <Route path="/about" element={<About />} />
       <Route path="/work" element={<Work />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="*" element={<NotFound />} />
+      <Route path="/404" element={<NotFound />} />
     </PageTransition>
   )
 }
