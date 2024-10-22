@@ -3,6 +3,20 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as TWEEN from "three/examples/jsm/libs/tween.module";
 import { SimplexNoise } from "three/examples/jsm/math/SimplexNoise";
+import Btn from "./button.jsx";
+
+function returnHome() {
+  return(
+    <div className="return-home z-20">
+      <div className="h1">Lost in the matrix?</div>
+      <Btn
+        color="btn-white"
+        text="Return home"
+
+      />
+    </div>
+  )
+}
 
 const NotFound = () => {
   const mountRef = useRef(null);
@@ -29,7 +43,7 @@ const NotFound = () => {
             let tileY = Math.floor(i / 8);
             let x = (tileX + 0.5) * dimStep;
             let y = texSize - (tileY + 0.5) * dimStep;
-            ctx.fillStyle = `rgba(0, 0, 0, 1)`;
+            ctx.fillStyle = `#f5f4ec`;
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
             ctx.font = `bold ${dimStep * 0.9}px Arial`;
@@ -190,8 +204,8 @@ const NotFound = () => {
     }
 
     let scene = new THREE.Scene();
-    scene.fog = new THREE.Fog("#fff", 100, 150);
-    scene.background = new THREE.Color("#fff");
+    scene.fog = new THREE.Fog("#1f1f1f", 100, 150);
+    scene.background = new THREE.Color("#1f1f1f");
     let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500);
     camera.position.set(0, 3, 8).setLength(50);
     let renderer = new THREE.WebGLRenderer({
@@ -238,7 +252,13 @@ const NotFound = () => {
     };
   }, []);
 
-  return <div ref={mountRef} style={{ width: '100%', height: '100vh', overflow: 'hidden' }}></div>;
+  return (
+    <>
+  <div ref={mountRef} className='absolute top-0 z-10' style={{ width: '100%', height: '100vh', overflow: 'hidden' }}>
+  </div>
+  <returnHome/>
+  </>
+  )
 };
 
 export default NotFound;

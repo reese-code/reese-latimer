@@ -1,7 +1,7 @@
 .container-exp {
     background-color: var(--black);
     color: var(--white);
-    height: fit-content;
+    height: 10px;
     width: 100%;
 }
 
@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px 0px
 }
 
 .content-exp h1 {

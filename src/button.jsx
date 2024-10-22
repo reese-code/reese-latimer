@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Btn({ color, text, onClick }) {
+function Btn({ color, text, onClick, direction }) {
     return (
-        <button className={color} onClick={onClick}>
+        <Link to={direction} className={color} onClick={onClick}>
             {text}
-        </button>
+        </Link>
     );
 }
 

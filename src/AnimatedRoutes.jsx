@@ -9,17 +9,17 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const PageTransition = ({ children }) => {
   const location = useLocation();
-  const navigate = useNavigate();
   const [displayLocation, setDisplayLocation] = useState(location);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     if (location !== displayLocation) {
       setIsAnimating(true);
+      // Delay setting the new location until the animation is complete
       setTimeout(() => {
         setDisplayLocation(location);
         setIsAnimating(false);
-      }, 700); // Adjust this timing to match your animation duration
+      }, 700); // Match this with the total duration of your animation
     }
   }, [location, displayLocation]);
 
@@ -31,10 +31,12 @@ const PageTransition = ({ children }) => {
 
   return (
     <>
-      <AnimatePresence mode="wait">
-        <Routes location={displayLocation} key={displayLocation.pathname}>
-          {children}
-        </Routes>
+      <AnimatePresence mode="wait" initial={false}>
+        <div key={displayLocation.pathname}>
+          <Routes location={displayLocation}>
+            {children}
+          </Routes>
+        </div>
       </AnimatePresence>
       <AnimatePresence>
         {isAnimating && [...Array(6)].map((_, i) => (
