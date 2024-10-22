@@ -6,26 +6,15 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: [
-        'three',
-        'three/examples/jsm/controls/OrbitControls',
-        'three/examples/jsm/libs/tween.module',
-        'three/examples/jsm/math/SimplexNoise',
         '@gsap/react'
-      ],
-      output: {
-        globals: {
-          three: 'THREE',
-          '@gsap/react': 'gsap'
-        }
-      }
-    },
+      ]
+    }
   },
   optimizeDeps: {
     include: ['three']
   },
   resolve: {
     alias: {
-      'three': 'three',
       'three/addons/': 'three/examples/jsm/'
     }
   }
