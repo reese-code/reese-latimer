@@ -3,15 +3,14 @@ import './about.css';
 import face from "../assets/pixel-face.png";
 import {motion} from 'framer-motion';
 import { Link } from 'react-router-dom';
+import PageHeading from './pageHeading.jsx';
 
 
 function About() {
     return(
         <>
             <div className="about-page">
-                <div className="about-title">
-                    about me
-                </div>
+                <PageHeading title="about" />
                 <div className="description h3">&lt;&gt;<span className='color-black'>Colorado-based Designer & Developer with focus on Art direction and Front end.</span>&lt;/&gt;</div>
                 <div className="experience-about flex">
                     <img src={face} className='face-pixel' />

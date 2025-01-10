@@ -1,0 +1,27 @@
+.container-heading {
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    width: calc(100vw - 80px);
+    border-bottom: solid 3px (--black);
+}
+
+.title-page {
+    font-size: 190px;
+    font-family: 'neue montreal bold';
+    text-transform: uppercase;
+    text-align: center;
+    margin: auto;
+    line-height: 80%;
+    color: var(--black)
+}
+
+@media only screen and (max-width: 1024px) { 
+    .title-page {
+        font-size: 70px;
+    }
+}
+
+
+
+

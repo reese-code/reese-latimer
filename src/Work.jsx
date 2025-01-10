@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
 import './work.css';
 import ProjectCard from './Project-card.jsx';
-import ProjectView from './Edistrict.jsx'; // Import ProjectView
+import ProjectView from './Edistrict.jsx';
+import PageHeading from './pageHeading.jsx';
 
 function Work() {
   const [isProjectViewVisible, setIsProjectViewVisible] = useState(false);
 
   const showProjectView = () => {
-    setIsProjectViewVisible(true); // Show the project view when button is clicked
+    setIsProjectViewVisible(true);
   };
 
   const hideProjectView = () => {
-    setIsProjectViewVisible(false); // Hide the project view when close is clicked
+    setIsProjectViewVisible(false);
   };
 
   return (
-    <>
-      <div className="about-title m-norm">work</div>
+    <div className="work-container">
+      <PageHeading
+        title="work"
+      />
       <div className="work-section">
-        <ProjectCard showProjectView={showProjectView} /> {/* Pass show function */}
+        <ProjectCard showProjectView={showProjectView} />
       </div>
       {isProjectViewVisible && (
         <ProjectView
@@ -26,10 +29,10 @@ function Work() {
           teamMembers="Reese Latimer"
           challenge="To drive clients to fill out the leasing application."
           solution="Built an easy-to-navigate website that shows off the features, amenities, and location."
-          onClose={hideProjectView} // Pass the function to hide the ProjectView
+          onClose={hideProjectView}
         />
       )}
-    </>
+    </div>
   );
 }
 

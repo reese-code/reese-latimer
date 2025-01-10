@@ -50,6 +50,7 @@ function Footer() {
 
   return (
     <>
+    <div className="footer-complete">
       <section className='lines'>
         <div className="line one texture"></div>
         <div className="line two texture"></div>
@@ -75,6 +76,7 @@ function Footer() {
           <div className="p-firm">Reese Latimer</div>
           <div className="p-firm">2024©</div>
         </div>
+      </div>
       </div>
     </>
   );

@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    bottom: 0px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -79,3 +80,14 @@
 }
 
 /* EXPANDING LINES END */
+
+.footer-complete {
+    width: 100%;
+}
+
+/* Apply absolute positioning only when Contact route is active */
+div:has([data-tf-live]) ~ .footer-complete {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

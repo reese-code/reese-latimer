@@ -20,11 +20,11 @@ function ProjectCard({ showProjectView }) {
             </div>
           </div>
           <div className="bottom-half-card">
-            <Btn
-              color="btn-white"
+            <button
+              class="btn-white"
               onClick={showProjectView} // Call the function to show ProjectView
-              text="View project"
-            />
+              
+            >View project</button>
           </div>
         </div>
       </div>
