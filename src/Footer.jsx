@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom'; // Import useLocation from react-router-dom
+import { Link, useLocation } from 'react-router-dom';
 import './Footer.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -8,45 +8,64 @@ import Btn from "./button.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 function Footer() {
-  const location = useLocation(); // Hook to detect the current route
+  const location = useLocation();
 
   useEffect(() => {
-    // Adding a small delay to ensure that the DOM elements are ready
-    setTimeout(() => {
-      const endFooter = "top 70%";
-      const lines = document.querySelectorAll('.line');
+    const lines = document.querySelectorAll('.line');
 
-      // Check if lines exist before animating
-      if (lines.length > 0) {
-        lines.forEach((line, index) => {
-          const initialY = 130 - index * 15; // Adjust initial y position for each line
-
-          gsap.fromTo(
-            line,
-            {
-              y: initialY, // Set initial position based on the index
-            },
-            {
-              y: 0, // End position, all lines move to y=0
-              duration: 1,
-              delay: 0.5,
-              scrollTrigger: {
-                trigger: ".footer", // Trigger the animation when the footer is in view
-                start: "top bottom", // Start animation when the top of the footer reaches the bottom of the viewport
-                end: endFooter, // End the animation when the top of the footer reaches 70% of the viewport
-                scrub: true, // Smooth animation linked to scroll
-              },
-            }
-          );
-        });
-      }
-    }, 100); // Failsafe delay of 100ms
-
-    // Clean up GSAP triggers on component unmount or route change
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    // Reset lines to initial position
+    const resetLines = () => {
+      lines.forEach((line, index) => {
+        const initialY = 130 - index * 15;
+        gsap.set(line, { y: initialY });
+      });
     };
-  }, [location.pathname]); // Re-run effect whenever the route changes
+
+    if (lines.length > 0) {
+      // Initial setup
+      resetLines();
+
+      // Create scroll triggers
+      lines.forEach((line, index) => {
+        const initialY = 130 - index * 15;
+        
+        ScrollTrigger.create({
+          trigger: ".footer",
+          start: "top 80%",
+          end: "top 20%",
+          onEnter: () => {
+            gsap.to(line, {
+              y: 0,
+              duration: 0.8,
+              delay: index * 0.1,
+              ease: "power2.out",
+              overwrite: true
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(line, {
+              y: initialY,
+              duration: 0.5,
+              overwrite: true
+            });
+          }
+        });
+      });
+
+      // Reset on route change
+      resetLines();
+    }
+
+    return () => {
+      // Kill all scroll triggers
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      
+      // Reset lines before unmounting
+      if (lines.length > 0) {
+        resetLines();
+      }
+    };
+  }, [location.pathname]);
 
   return (
     <>

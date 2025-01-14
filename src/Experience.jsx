@@ -8,18 +8,56 @@ gsap.registerPlugin(ScrollTrigger);
 
 function scrollFold() {
   const items = gsap.utils.toArray(".item");
+  const lastCard = document.querySelector('.last-card');
   const contentExp = document.querySelector('.content-exp');
-  const finalCard = document.querySelector('.last-card');
   
-  // Set the height of the content to accommodate all items
+  // Animate all cards
+  [...items, lastCard].forEach((item) => {
+    const desc = item.querySelector('.p');
+    const number = item.querySelector('.bottom-number');
+    
+    // Set initial state
+    gsap.set([desc, number], { opacity: 0, y: 30 });
+    
+    // Fade in animation
+    ScrollTrigger.create({
+      trigger: item,
+      start: "bottom bottom",
+      end: "bottom center",
+      markers: false,
+      onEnter: () => {
+        const tl = gsap.timeline();
+        tl.to(desc, {
+          opacity: 1,
+          y: 0,
+          duration: 0.3,
+          ease: "power2.out"
+        }).to(number, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: "power2.out"
+        }, ">-0.2");
+      },
+      onLeaveBack: () => {
+        gsap.to([desc, number], {
+          opacity: 0,
+          y: 30,
+          duration: 0.3
+        });
+      }
+    });
+  });
 
-
+  // Handle pinning for each card
   items.forEach((item, i) => {
     ScrollTrigger.create({
       trigger: item,
       start: "top top",
-      endTrigger: 'bottom' - contentExp,
-      end: "bottom top",
+      // For all cards except the last one, use the last card as the end trigger
+      endTrigger: lastCard,
+      // For all cards except the last one, end when the last card hits the top
+      end: "top top",
       pin: true,
       pinSpacing: false,
       markers: false,

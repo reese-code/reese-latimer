@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import './contact.css';
 
 function Contact() {
     useEffect(() => {
@@ -13,7 +14,7 @@ function Contact() {
     }, []);
 
     return (
-        <div data-tf-live="01JBR2MBJ637QWRS49PYEN4H2S"></div>
+        <div className='contact-form' data-tf-live="01JBR2MBJ637QWRS49PYEN4H2S"></div>
     );
 }
 

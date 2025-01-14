@@ -81,13 +81,20 @@
 
 /* EXPANDING LINES END */
 
-.footer-complete {
-    width: 100%;
+/* Make root element take full viewport height and use flex */
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Apply absolute positioning only when Contact route is active */
-div:has([data-tf-live]) ~ .footer-complete {
-    position: absolute;
-    bottom: 0;
+/* Main content should grow to fill available space */
+#root > div {
+    flex: 1;
+}
+
+/* Footer stays at bottom */
+.footer-complete {
     width: 100%;
+    margin-top: auto;
 }
