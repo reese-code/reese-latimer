@@ -91,13 +91,31 @@ function Card({ title, description, number, item }) {
 
 function Experience() {
   useEffect(() => {
-    scrollFold();
-    
+    // Kill any existing scroll triggers first
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+    // Wait for route transition to complete
+    const timeout = setTimeout(() => {
+      // Reset initial states
+      const items = gsap.utils.toArray(".item");
+      const lastCard = document.querySelector('.last-card');
+      
+      [...items, lastCard].forEach((item) => {
+        const desc = item.querySelector('.p');
+        const number = item.querySelector('.bottom-number');
+        gsap.set([desc, number], { opacity: 0, y: 30 });
+      });
+
+      // Initialize scroll animations
+      scrollFold();
+    }, 800); // Wait slightly longer than the route transition animation
+
     // Clean up function
     return () => {
+      clearTimeout(timeout);
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, []);
+  }, [location.pathname]); // Re-run when route changes
 
   return (
     <div className="container-exp texture p-norm flex flex-col">

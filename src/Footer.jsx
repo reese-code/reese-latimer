@@ -11,59 +11,52 @@ function Footer() {
   const location = useLocation();
 
   useEffect(() => {
-    const lines = document.querySelectorAll('.line');
+    // Kill any existing scroll triggers first
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-    // Reset lines to initial position
-    const resetLines = () => {
-      lines.forEach((line, index) => {
-        const initialY = 130 - index * 15;
-        gsap.set(line, { y: initialY });
-      });
-    };
+    // Wait for route transition to complete
+    const timeout = setTimeout(() => {
+      const lines = document.querySelectorAll('.line');
 
-    if (lines.length > 0) {
-      // Initial setup
-      resetLines();
-
-      // Create scroll triggers
-      lines.forEach((line, index) => {
-        const initialY = 130 - index * 15;
-        
-        ScrollTrigger.create({
-          trigger: ".footer",
-          start: "top 80%",
-          end: "top 20%",
-          onEnter: () => {
-            gsap.to(line, {
-              y: 0,
-              duration: 0.8,
-              delay: index * 0.1,
-              ease: "power2.out",
-              overwrite: true
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(line, {
-              y: initialY,
-              duration: 0.5,
-              overwrite: true
-            });
-          }
+      if (lines.length > 0) {
+        // Reset lines to initial position
+        lines.forEach((line, index) => {
+          const initialY = 130 - index * 15;
+          gsap.set(line, { y: initialY });
         });
-      });
 
-      // Reset on route change
-      resetLines();
-    }
+        // Create new scroll triggers
+        lines.forEach((line, index) => {
+          const initialY = 130 - index * 15;
+          
+          ScrollTrigger.create({
+            trigger: ".footer",
+            start: "top 80%",
+            end: "top 20%",
+            onEnter: () => {
+              gsap.to(line, {
+                y: 0,
+                duration: 0.8,
+                delay: index * 0.1,
+                ease: "power2.out",
+                overwrite: true
+              });
+            },
+            onLeaveBack: () => {
+              gsap.to(line, {
+                y: initialY,
+                duration: 0.9g,
+                overwrite: true
+              });
+            }
+          });
+        });
+      }
+    }, 800); // Wait slightly longer than the route transition animation
 
     return () => {
-      // Kill all scroll triggers
+      clearTimeout(timeout);
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      
-      // Reset lines before unmounting
-      if (lines.length > 0) {
-        resetLines();
-      }
     };
   }, [location.pathname]);
 
