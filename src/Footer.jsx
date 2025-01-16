@@ -45,7 +45,7 @@ function Footer() {
             onLeaveBack: () => {
               gsap.to(line, {
                 y: initialY,
-                duration: 0.9g,
+                  duration: 0.9,
                 overwrite: true
               });
             }

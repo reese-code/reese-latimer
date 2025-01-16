@@ -15,15 +15,42 @@ function scrollFold() {
   [...items, lastCard].forEach((item) => {
     const desc = item.querySelector('.p');
     const number = item.querySelector('.bottom-number');
+    const title = item.querySelector('.h1');
     
-    // Set initial state
+    // Set initial states
     gsap.set([desc, number], { opacity: 0, y: 30 });
     
-    // Fade in animation
+    // Create reveal animation for card title
+    const mask = document.createElement('div');
+    mask.style.position = 'absolute';
+    mask.style.top = '0';
+    mask.style.left = '0';
+    mask.style.width = '100%';
+    mask.style.height = '100%';
+    mask.style.background = '#1f1f1f';
+    mask.style.transformOrigin = 'bottom';
+    title.style.position = 'relative';
+    title.appendChild(mask);
+    
     ScrollTrigger.create({
       trigger: item,
-      start: "bottom bottom",
-      end: "bottom center",
+      start: "top center",
+      once: true,
+      markers: false,
+      onEnter: () => {
+        gsap.to(mask, {
+          scaleY: 0,
+          duration: 0.5,
+          ease: "power2.inOut"
+        });
+      }
+    });
+    
+    // Fade in animation for description and number
+    ScrollTrigger.create({
+      trigger: item,
+      start: "top center",
+      once: true,
       markers: false,
       onEnter: () => {
         const tl = gsap.timeline();
@@ -31,20 +58,14 @@ function scrollFold() {
           opacity: 1,
           y: 0,
           duration: 0.3,
-          ease: "power2.out"
+          ease: "power2.out",
+          delay: 0.3
         }).to(number, {
           opacity: 1,
           y: 0,
           duration: 0.5,
           ease: "power2.out"
         }, ">-0.2");
-      },
-      onLeaveBack: () => {
-        gsap.to([desc, number], {
-          opacity: 0,
-          y: 30,
-          duration: 0.3
-        });
       }
     });
   });
@@ -54,9 +75,7 @@ function scrollFold() {
     ScrollTrigger.create({
       trigger: item,
       start: "top top",
-      // For all cards except the last one, use the last card as the end trigger
       endTrigger: lastCard,
-      // For all cards except the last one, end when the last card hits the top
       end: "top top",
       pin: true,
       pinSpacing: false,
@@ -99,6 +118,34 @@ function Experience() {
       // Reset initial states
       const items = gsap.utils.toArray(".item");
       const lastCard = document.querySelector('.last-card');
+      const sectionTitle = document.querySelector('.section-title');
+      
+      // Create mask for section title
+      const mask = document.createElement('div');
+      mask.style.position = 'absolute';
+      mask.style.top = '0';
+      mask.style.left = '0';
+      mask.style.width = '100%';
+      mask.style.height = '100%';
+      mask.style.background = '#1f1f1f';
+      mask.style.transformOrigin = 'bottom';
+      sectionTitle.style.position = 'relative';
+      sectionTitle.appendChild(mask);
+      
+      // Create reveal animation for section title
+      ScrollTrigger.create({
+        trigger: sectionTitle,
+        start: "top 80%",
+        once: true,
+        markers: false,
+        onEnter: () => {
+          gsap.to(mask, {
+            scaleY: 0,
+            duration: 1,
+            ease: "power2.inOut"
+          });
+        }
+      });
       
       [...items, lastCard].forEach((item) => {
         const desc = item.querySelector('.p');
@@ -108,14 +155,14 @@ function Experience() {
 
       // Initialize scroll animations
       scrollFold();
-    }, 800); // Wait slightly longer than the route transition animation
+    }, 800);
 
     // Clean up function
     return () => {
       clearTimeout(timeout);
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, [location.pathname]); // Re-run when route changes
+  }, [location.pathname]);
 
   return (
     <div className="container-exp texture p-norm flex flex-col">
