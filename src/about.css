@@ -85,7 +85,7 @@
 
 @media only screen and (max-width: 770px) {
     .face-pixel {
-        width: 100%
+        width: 50%
     }
     .experience-about {
         flex-direction: column;

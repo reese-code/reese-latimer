@@ -1,17 +1,76 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './about.css';
 import face from "../assets/pixel-face.png";
 import {motion} from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageHeading from './pageHeading.jsx';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
 
 function About() {
+    const descriptionRef = useRef(null);
+    const textContent = 'Colorado-based Designer & Developer with focus on Art direction and Front end.';
+    const [displayText, setDisplayText] = useState('');
+    const [isTyping, setIsTyping] = useState(false);
+    const [showCursor, setShowCursor] = useState(true);
+    const intervalRef = useRef(null);
+    const cursorIntervalRef = useRef(null);
+
+    useEffect(() => {
+        // Cursor blinking effect
+        cursorIntervalRef.current = setInterval(() => {
+            setShowCursor(prev => !prev);
+        }, 530);
+
+        return () => {
+            if (cursorIntervalRef.current) clearInterval(cursorIntervalRef.current);
+        };
+    }, []);
+
+    useEffect(() => {
+        const trigger = ScrollTrigger.create({
+            trigger: descriptionRef.current,
+            start: "top center",
+            onEnter: () => {
+                if (!isTyping) {
+                    setIsTyping(true);
+                    let currentIndex = 0;
+                    
+                    // Add a small delay before starting
+                    setTimeout(() => {
+                        intervalRef.current = setInterval(() => {
+                            if (currentIndex <= textContent.length) {
+                                setDisplayText(textContent.slice(0, currentIndex));
+                                currentIndex++;
+                            } else {
+                                if (intervalRef.current) clearInterval(intervalRef.current);
+                            }
+                        }, 35); // Typing speed
+                    }, 400); // Initial delay
+                }
+            },
+            onLeaveBack: () => {
+                setDisplayText('');
+                setIsTyping(false);
+                if (intervalRef.current) clearInterval(intervalRef.current);
+            }
+        });
+
+        return () => {
+            if (intervalRef.current) clearInterval(intervalRef.current);
+            if (trigger) trigger.kill();
+        };
+    }, [isTyping]);
+
     return(
         <>
             <div className="about-page">
                 <PageHeading title="about" />
-                <div className="description h3">&lt;&gt;<span className='color-black'>Colorado-based Designer & Developer with focus on Art direction and Front end.</span>&lt;/&gt;</div>
+                <div className="description h3" ref={descriptionRef}>
+                    &lt;&gt;<span className='color-black'>{displayText}{showCursor && <span className="cursor">|</span>}</span>&lt;/&gt;
+                </div>
                 <div className="experience-about flex">
                     <img src={face} className='face-pixel' />
                     <div className="experience-content-about flex flex-col">
